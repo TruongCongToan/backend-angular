@@ -1,0 +1,16 @@
+
+<h3 customColor>xin chao {{name }} </h3>
+<br/>
+<input type="text" [(ngModel)]="name">
+<br>
+<br>
+<h4>Age :{{age }}</h4>
+<button (click) = "addAge()">Add new Age</button>
+<button (click) = "deAge()"> decrease Age</button>
+<br>
+<br>
+<br>
+<span *ngIf="age < 18;then condition1 ;else condition2"></span>
+<ng-template #condition1> ba duoi 18 tuoi</ng-template>
+<<ng-template #condition2> ban da tren 18 tuoi  </ng-template>
+<br>

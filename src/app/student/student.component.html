@@ -1,0 +1,55 @@
+<br><br><br>
+
+<button pButton pRipple type="button" 
+label="Thêm sinh viên" class="p-button-raised p-button-success"
+(click) = "addStudent()"></button>
+<br>
+<br>
+<form class="form-inline my-2 my-lg-0">
+    <input type="search" (ngModelChange)="searchStudent(key.value)" #key="ngModel" ngModel
+     name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search student..." required>
+ </form>
+
+    
+<br><br>
+
+
+    
+<table  id="customers" style="boder-collapse: collapse;" >
+<tr>
+    <th>MSSV</th>
+    <th>Họ và tên</th>
+    <th>Ngày sinh</th>
+    <th>Giới tính</th>
+    <th>Tỉnh</th>
+    <th>Mã lớp</th>
+    <th>Action</th>
+</tr>
+<tr *ngFor="let student of students">
+    <td>{{student?.masv}}</td>
+    <td>{{student?.hodem}} {{student.ten}}</td>
+    <td>{{student?.dob}}</td>
+    <td>{{student?.gioitinh}}</td>
+    <td>{{student?.tinh}}</td>
+    <td>{{student?.malop}}</td>
+ <td>
+     <button 
+     style="background-color: red;" 
+     title="Xóa {{student?.hodem}} {{student?.ten}} ?"
+     (click) ="xoaSV(student.masv)"
+     >Xoa</button>
+    <button
+    style="background-color: rgb(53, 134, 53);" 
+    title="Sửa thông tin sinh viên"
+    (click) = "editStudent(student.masv)"
+    >edit</button>
+</td>
+    
+</tr>
+
+
+</table>
+<br>
+<br>
+<br>
+    <span>Tong so sinh vien la : &nbsp;{{students?.length}} &nbsp;</span>

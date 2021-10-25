@@ -1,0 +1,67 @@
+<div class="container">
+  <h1>Form đăng ký thông tin sinh viên</h1>
+  <form [formGroup]="studentForm">
+    <label>
+      Nhập MSSV :
+      <input type="text" formControlName="masv" required />
+    </label>
+    <span *ngIf="studentForm.controls.masv.invalid" class="errorMessage">
+      * Cần phải nhập mã sinh viên
+    </span>
+    <br/>
+    <label>
+      Nhập họ đệm:
+      <input type="text" formControlName="hodem" required />
+    </label>
+    <span *ngIf="studentForm.controls.hodem.invalid" class="errorMessage">
+      * Cần phải nhập họ đệm
+    </span>
+    <br />
+    <label>
+      Nhập tên:
+      <input type="text" formControlName="ten" required />
+    </label>
+    <span *ngIf="studentForm.controls.ten.invalid" class="errorMessage">
+      * Cần phải nhập Tên
+    </span>
+    <br />
+
+    <label>
+      Nhập ngày sinh:
+      <input type="text" formControlName="dob" required />
+      
+    </label>
+    <span *ngIf="studentForm.controls.dob.invalid" class="errorMessage">
+      * Cần phải nhập ngày sinh
+    </span>
+    <br />
+    <label>
+      Nhập giới tinh:
+      <input type="text" formControlName="gioitinh"  />
+    </label>
+    <br />
+    <label>
+      Nhập tỉnh:
+      <input type="text" formControlName="tinh"  />
+    </label>
+    <br />
+    <label>
+      Nhập mã lớp:
+      <input type="text" formControlName="malop" required />
+    </label>
+    <span *ngIf="studentForm.controls.malop.invalid" class="errorMessage">
+      * Cần phải nhập mã lớp
+    </span>
+    <br />
+    
+
+    <button
+    type="submit"
+    class="btn btn-success"
+    [disabled]="!studentForm.valid"
+    (click)= "saveAndGotoList()"
+  >
+  OK
+  </button>
+  </form>
+</div>
